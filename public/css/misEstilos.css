@@ -1,0 +1,117 @@
+*{
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html{
+  line-height:1.5;
+  -webkit-text-size-adjust:100%;
+  -moz-tab-size:4;
+  tab-size:4;
+  font-family:Figtree, sans-serif;
+  font-feature-settings:normal
+}
+.contenido{
+  margin:10px 10px;
+  width:98%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  height:455px;
+}
+header{
+  width: 100%;
+}
+
+.colorHeader{
+  background: #000;
+  opacity: 85%;
+  width: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+header .menu a{
+  color: #fff;
+  text-decoration: none;
+  margin-right: 40px;
+  font-size:18px ;
+}
+header .menu a:hover{
+  text-decoration: underline;
+}
+
+body{
+ background: url('images/fondo.jpg');
+ background-size: cover;
+ background-attachment: fixed;
+}
+.bodyContein{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+   
+}
+
+.main {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+  .recuadro{
+    margin:25px 25px;
+    background: #000;    
+    opacity: 85%;
+    border-radius: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  form{    
+    color: white;
+    margin: 35px;
+    font-size: 25;
+  }
+  .align-right{
+    display: flex;
+    flex-direction: row-reverse;
+
+  }
+
+footer{
+  background:#000;
+  opacity: 85%;
+  width: 100%;
+  margin: 60px 0px 0px |0px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+footer .redes-sociales a,p{
+  color: white;
+  text-decoration: underline;
+  margin-left: 20px;
+}
+
+footer .redes-sociales a:hover{
+  text-decoration: none;
+}
+
+.lineal{
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
