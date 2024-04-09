@@ -32,8 +32,7 @@ Route::middleware('auth')->group(function () {
    //Auth::user()->nombre;
    Route::get('/productosL', [ProfileController::class, 'agregarProducto'])
                 ->name('profile.agregarProducto');
-   Route::get('/bandeja', [ProfileController::class, 'bandejaProducto'])
-                ->name('profile.bandejaProducto');
+   
 });
 
 require __DIR__.'/auth.php';

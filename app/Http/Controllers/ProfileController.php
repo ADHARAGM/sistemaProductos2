@@ -73,7 +73,7 @@ class ProfileController extends Controller
          return view('productosL.productos', compact('datos'));
     }
     public function bandejaProducto(){
-        $datos=Productos::all();
+        $datos=Productos::paginate(5);
         return view('productosL.bandeja', compact('datos'));
     }
 }

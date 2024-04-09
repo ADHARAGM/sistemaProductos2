@@ -15,7 +15,7 @@
                         {{ __('Registrar Producto') }}
                     </x-nav-link>
                     @else
-                     <x-nav-link :href="route('profile.bandejaProducto')">
+                     <x-nav-link :href="route('creaProductos.bandejaProducto')">
                         {{ __('Bandeja') }}
                     </x-nav-link>
                     @endif

@@ -10,6 +10,18 @@ class Productos extends Model
     public $timestamps = false;
     use HasFactory;
 
+    protected $fillable=[
+        'id_producto',
+        'nombreProducto',
+        'descrip',
+        'precio',
+        'fecha_compra',
+        'estado',
+        'comentario',
+        'id_categoria',
+        'id_sucursal'
+    ];
+
     public function sucursales(){
         return $this->hasOne(Sucursales::class, 'id_sucursal', 'id_sucursal');
     }

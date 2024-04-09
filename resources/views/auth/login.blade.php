@@ -2,7 +2,8 @@
     <!-- Session Status -->
     <x-auth-session-status class="col-sm-6" :status="session('status')" />
     <div class="col-sm-6">
-        <div class="recuadro">       
+        <div class="recuadro">
+           <?php //Session::get?>      
             <form method="POST" action="{{ route('login') }}">
             @csrf
                 <!-- Email Address -->

@@ -4,16 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Models\Productos;
 use Illuminate\Http\Request;
-
+use App\Models\Categorias;
+use App\Models\Sucursales;
 class CreaProductosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     
-    /**
-     * Show the form for creating a new resource.
-     */
+    public function bandejaProducto(){
+        $datos=Productos::paginate(5);
+        return view('productosL.bandeja', compact('datos'));
+    }
+    public function agregarProducto(){
+         $datos['categorias']=Categorias::all();
+         $datos['sucursales']=Sucursales::all();
+         return view('productosL.productos', compact('datos'));
+    }
+    
     public function createProducto(Request $request)
     {
         $productos=new Productos();
@@ -28,9 +36,12 @@ class CreaProductosController extends Controller
         return redirect()->route("profile.agregarProducto")->with("success","Agregado correctamente");        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    public function editaProducto($id_producto){
+        $datos['categorias']=Categorias::all();
+        $datos['sucursales']=Sucursales::all();
+        $datos['persona']=Productos::where('id_producto', $id_producto)->first();
+        return view('productosL.editaProducto', compact('datos'));
+    }
     public function store(Request $request)
     {
         //
@@ -39,7 +50,7 @@ class CreaProductosController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CreaProductos $creaProductos)
+    public function show(Request $creaProductos)
     {
         //
     }
@@ -47,9 +58,11 @@ class CreaProductosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CreaProductos $creaProductos)
+    public function edit(Request $creaProductos,$id_producto)
     {
-        //
+         $productos=request()->except(['_token'],'_method');
+        Productos::where('id_producto', $id_producto)->update($productos);
+        return redirect('bandeja');
     }
 
     /**
@@ -63,8 +76,10 @@ class CreaProductosController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CreaProductos $creaProductos)
+    public function destroy($id_producto)
     {
-        //
+        Productos::where('id_producto', $id_producto)->delete();
+        
+        return redirect('bandeja');
     }
 }

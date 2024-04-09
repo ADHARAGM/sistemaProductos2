@@ -17,10 +17,12 @@ return new class extends Migration
             $table->String('descrip',100);
             $table->double('precio');
             $table->date('fecha_compra');
-            $table->bigInteger('id_categoria')->unsigned()->index()->nullable();
+            $table->String('estado')->nullable();;
+            $table->text('comentario')->nullable();;
+            $table->bigInteger('id_categoria')->unsigned()->index();
             $table->foreign('id_categoria')->references('id_categoria')->on('categorias')->onDelete('cascade');
 
-            $table->bigInteger('id_sucursal')->unsigned()->index()->nullable();
+            $table->bigInteger('id_sucursal')->unsigned()->index();
             $table->foreign('id_sucursal')->references('id_sucursal')->on('sucursales')->onDelete('cascade');
 
 
